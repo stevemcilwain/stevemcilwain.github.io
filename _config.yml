@@ -31,7 +31,7 @@ links:
 
 # Analytics 
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-google_analytics:   
+google_analytics:   UA-72430048-1
 google_verify:      
 bing_verify:   
 
