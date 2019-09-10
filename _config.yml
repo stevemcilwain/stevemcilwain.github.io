@@ -3,7 +3,7 @@ description:      "WELCOME FELLOW HUMANS"
 logo:             logo.png
 disqus_shortname: none
 share:            true
-url:        	  http://stevemcilwain.github.io
+url:        	    https://stevemcilwain.github.io
 
 # Owner/author information
 owner:
@@ -11,7 +11,7 @@ owner:
   avatar:         stevemcilwain.png
   email:          none@none
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
-  description:    Nerd
+  description:    DEFINITELY A HUMAN
   twitter:        steve_mcilwain
   github:         stevemcilwain      
   
@@ -24,15 +24,15 @@ bing_verify:
 # Links to include in footer navigation
 # For external links add external: true
 links:
-  - title: Home
+  - title: HOME
     url: /
     external: false
     icon: home
-  - title: Featured Posts
+  - title: FEATURED
     url: /featured
-  - title: Categories
+  - title: CATEGORIES
     url: /categories
-  - title: About
+  - title: ABOUT
     url: /steve
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
