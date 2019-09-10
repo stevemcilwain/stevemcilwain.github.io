@@ -1,11 +1,16 @@
 ---
 layout: post
-published: true
-categories:
-  - personal
-featured: false
+published: false
+featured: true
 comments: false
 title: Dealing with WOW64
+headline: Dealing with WOW64
+description: Understanding the Windows on Windows (WOW) subsystem.
+modified: '2019-03-01'
+categories:
+  - hacking
+  - windows
+tags: hacking windows wow64 powershell sysnative
 ---
 ## The Problem
 
@@ -21,3 +26,12 @@ This emulation layer is called WOW64 (Windows on Windows) and by understanding h
 
 There are several ways to detect a 64-bit version of Windows, one of which is to use the _set_ command to display environment variables and look for processor architecture. Another simple way is to verify the presence of the _Program Files (x86)_ directory, which only exists on 64-bit versions of Windows.
 
+## File Redirection for 32-Bit Apps
+
+Windows 64-bit libraries and executables are located in the _%SYSTEMROOT%\system32_ directory.  The name may seem confusing, but was done to maintain backwards compatibility because of hard coded paths.  
+
+Windows 32-bit libraries and executables are located in the _%SYSTEMROOT%\syswow64_ directory, but instead of having to modify paths in source code, WOW64 transparent redirects 32-bit app calls from _%SYSTEMROOT%\system32_ to _%SYSTEMROOT%\syswow64_.
+
+Here's what you really need to know:
+
+A 32-bit app can also explicitly access 64-bit versions using the %SYSTEMROOT%\sysnative path (not visible in Windows Explorer).
