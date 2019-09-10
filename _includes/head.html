@@ -27,7 +27,6 @@
 {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' | strip_slash }}{% endif %}{% endcapture %}
 <link rel="canonical" href="{{ canonical }}">
 <link href="{{ site.url }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-{% if site.owner.google_plus %}<link rel="author" href="{{ site.owner.google_plus }}?rel=author">{% endif %}
 
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
@@ -35,13 +34,15 @@
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin,latin-ext' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800,600&amp;subset=latin,latin-ext' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/vendor/normalizeb146.css?v=77a7756db2">
-    <link rel="stylesheet" href="{{ site.url }}/assets/css/vendor/foundation.minb146.css?v=77a7756db2">
+    <link rel="stylesheet" href="https://use.fontawesome.com/5002f99ed4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.0/css/foundation.min.css">
+
     <link rel="stylesheet" href="{{ site.url }}/assets/css/styleb146.css?v=77a7756db2">
     <link rel="stylesheet" href="{{ site.url }}/assets/css/postb146.css?v=77a7756db2">
-    <script src="{{ site.url }}/assets/js/vendor/modernizrb146.js?v=77a7756db2"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+    
 <!-- Icons -->
 <!-- 16x16 -->
 <link rel="shortcut icon" href="{{ site.url }}/favicon.ico">
