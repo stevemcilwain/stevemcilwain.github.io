@@ -1,5 +1,5 @@
-title:            STOP
-description:      "NOTHING TO READ HERE"
+title:            YAY!
+description:      "Hacking Is Fun"
 logo:             logo.png
 disqus_shortname: none
 share:            true
@@ -108,12 +108,12 @@ prose:
               value: personal
             - name: "Hacking"
               value: hacking
-            - name: "GameDev"
-              value: gamedev
-            - name: "Travel"
-              value: travel
-            - name: "Interesting"
-              value: interesting
+            - name: "Tools"
+              value: tools
+            - name: "Linux"
+              value: linux
+            - name: "Windows"
+              value: windows
             - name: "Random"
               value: random
           alterable: true
