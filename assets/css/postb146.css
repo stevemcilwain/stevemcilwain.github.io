@@ -475,14 +475,6 @@ html, body, .summer-post-container, .summer-post-header {
   background: #03A9F4;
   color: #fff; }
 
-pre {
-  word-wrap: break-word;
-  margin-bottom: 1.5625rem; }
-
-code {
-  font-size: 0.9375rem;
-  line-height: 1.2; 
-  color: #000; }
 
 iframe {
   border: 0; }
