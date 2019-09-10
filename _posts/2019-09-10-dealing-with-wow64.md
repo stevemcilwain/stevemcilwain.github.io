@@ -17,3 +17,8 @@ The 64-bit versions of Windows provide an emulation layer for 32-bit application
 
 This emulation layer is called WOW64 (Windows on Windows) and by understanding how it works, you can run 64-bit versions of apps from a 32-bit process and vice versa.
 
+## Detecting 64-bit Windows
+
+There are several ways to detect a 64-bit version of Windows, one of which is to use the '''set''' command to display environment variables and look for processor architecture. 
+
+Another simple way is to verify the presence of the  Program Files (x86)  directory, which only exists on 64-bit versions of Windows.
