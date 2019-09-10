@@ -8,9 +8,8 @@ url:        	    https://stevemcilwain.github.io
 # Owner/author information
 owner:
   name:           Steve Mcilwain
-  avatar:         stevemcilwain.png
+  avatar:         logo.png
   email:          none@none
-  # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    DEFINITELY A HUMAN
   twitter:        steve_mcilwain
   github:         stevemcilwain
