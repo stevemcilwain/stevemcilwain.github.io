@@ -71,7 +71,7 @@ prose:
         field:
           label: "Published"
           element: "checkbox"
-          value: "true"
+          value: "false"
       - name: "layout"
         field:
           element: "hidden"
@@ -81,17 +81,17 @@ prose:
         field:
           label: "Title"
           element: "text"
-          value: "An Awesome Headline!"
+          value: "add a headline"
       - name: "description"
         field:
           element: "text"
           label: "Description"
-          placeholder: "Enter Post Description"
+          placeholder: "post description"
       - name: "headline"
         field:
           element: "text"
-          label: "beadline"
-          placeholder: "Enter Post Headline"
+          label: "Headline"
+          placeholder: "post headline"
       - name: "modified"
         field:
           element: "text"
@@ -102,7 +102,7 @@ prose:
           element: "multiselect"
           label: "Add categories"
           placeholder: "Choose categories"
-          value: personal
+          value: 
           options:
             - name: "Personal"
               value: personal
@@ -132,12 +132,6 @@ prose:
           element: "checkbox"
           label: "Featured?"
           value: false
-      - name: "comments"
-        field:
-          element: "checkbox"
-          label: "Comments"
-          value: false
-
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Gemfile", "Capfile", "Gemfile.lock", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]

@@ -481,7 +481,8 @@ pre {
 
 code {
   font-size: 0.9375rem;
-  line-height: 1.2; }
+  line-height: 1.2; 
+  color: #000; }
 
 iframe {
   border: 0; }
