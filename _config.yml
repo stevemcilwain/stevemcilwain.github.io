@@ -1,5 +1,5 @@
-title:            stevemcilwa.in
-description:      "Just another mindless blog"
+title:            200 OK
+description:      "WELCOME FELLOW HUMANS"
 logo:             logo.png
 disqus_shortname: none
 share:            true
@@ -62,8 +62,8 @@ kramdown:
 
 prose:
   rooturl: '_posts'
-  siteurl: 'http://stevemcilwain.github.io/'
-  relativeLinks: 'http://stevemcilwain.github.io/links.jsonp'
+  siteurl: 'https://stevemcilwain.github.io/'
+  relativeLinks: 'https://stevemcilwain.github.io/links.jsonp'
   media: 'images'
   metadata:
     _posts:
