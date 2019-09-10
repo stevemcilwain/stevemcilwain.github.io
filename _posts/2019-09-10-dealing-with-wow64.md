@@ -19,6 +19,5 @@ This emulation layer is called WOW64 (Windows on Windows) and by understanding h
 
 ## Detecting 64-bit Windows
 
-There are several ways to detect a 64-bit version of Windows, one of which is to use the '''set''' command to display environment variables and look for processor architecture. 
+There are several ways to detect a 64-bit version of Windows, one of which is to use the _set_ command to display environment variables and look for processor architecture. Another simple way is to verify the presence of the _Program Files (x86)_ directory, which only exists on 64-bit versions of Windows.
 
-Another simple way is to verify the presence of the  Program Files (x86)  directory, which only exists on 64-bit versions of Windows.
