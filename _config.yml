@@ -1,5 +1,5 @@
-title:            YAY!
-description:      "Hacking Is Fun"
+title:            "Hacking is Fun!"
+description:      "A collection of my favorite tips and tricks."
 logo:             logo.png
 disqus_shortname: none
 share:            true
@@ -13,7 +13,8 @@ owner:
   # Use the coder's toolbox at http://coderstoolbox.net/string/#!encoding=xml&action=encode&charset=us_ascii to encode your description into XML string
   description:    DEFINITELY A HUMAN
   twitter:        steve_mcilwain
-  github:         stevemcilwain      
+  github:         stevemcilwain
+  linkedin:       stevemcilwain      
   
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
