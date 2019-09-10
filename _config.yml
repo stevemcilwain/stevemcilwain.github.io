@@ -1,7 +1,7 @@
 title:            stevemcilwa.in
-description:      "Just another mindless blog..."
+description:      "Just another mindless blog"
 logo:             logo.png
-disqus_shortname: 
+disqus_shortname: none
 share:            true
 url:        	  http://stevemcilwain.github.io
 
@@ -15,7 +15,6 @@ owner:
   twitter:        steve_mcilwain
   github:         stevemcilwain      
   
-
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
 google_verify:      
