@@ -1,11 +1,11 @@
 ---
 layout: post
-published: false
+published: true
 featured: true
 comments: false
-title: Dealing with WOW64
-headline: Dealing with WOW64
-description: Understanding the Windows on Windows (WOW) subsystem.
+title: WOW64
+headline: 'WOW64 '
+description: What you need to know as a pen tester.
 modified: '2019-03-01'
 categories:
   - hacking
