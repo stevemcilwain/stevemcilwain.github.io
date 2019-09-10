@@ -127,11 +127,6 @@ prose:
           element: "text"
           label: "Featured Image"
           placeholder: "somefile.jpg"
-      - name: "mathjax"
-        field:
-          element: "checkbox"
-          label: "MathJax"
-          value: false
       - name: "featured"
         field:
           element: "checkbox"
