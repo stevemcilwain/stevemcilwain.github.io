@@ -52,6 +52,7 @@ BOX_PATH = "offensive-security/kali-linux"
 BOX_UPDATE = true
 
 ```
+<p> </p>
 
 ## Virtual Machine Settings
 
@@ -87,7 +88,7 @@ PKGS_UPGRADE = false
 Please report any bugs or problems via Github issues. 
 
 ```
-
+<p> </p>
 ## Resources
 
 - <a href="https://github.com/stevemcilwain/Disposable-Kali" target="_blank">Disposable Kali on Github</a>
