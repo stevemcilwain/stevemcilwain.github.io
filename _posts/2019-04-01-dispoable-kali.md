@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-featured: true
+featured: false
 title: Disposable Kali Linux
 headline: 'Disposable Kali Linux'
 description: How to effortlessly spin up Kali Linux with Vagrant

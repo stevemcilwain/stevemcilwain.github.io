@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-featured: true
+featured: false
 title: Disposable Kali Linux 0.2
 headline: 'Disposable Kali Linux 0.2'
 description: Updates and improvements to Disposable Kali Linux
