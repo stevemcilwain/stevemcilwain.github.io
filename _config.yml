@@ -1,6 +1,6 @@
 # Config
 
-title:            "Hacking is Fun!"
+title:            "Hack the Bits!"
 description:      "A collection of my favorite hacking tips and tricks."
 logo:             logo.png
 url:              https://stevemcilwain.github.io
@@ -11,7 +11,7 @@ owner:
   avatar:         logo.png
   email:          
   description:    DEFINITELY A HUMAN
-  twitter:        steve_mcilwain
+  twitter:        
   github:         stevemcilwain
   linkedin:       stevemcilwain    
 

@@ -135,13 +135,12 @@ Some future ideas:
 
 ## Resources
 
--VirtualBox
--Offensive Security Kali Appliances
--Kali.org ISO Images
--Hashicorp Vagrant
--Offensive Security Vagrant Box
--Disposable Kali on Github
--Disposable Kali Vagrantfile
+- <a href="https://www.virtualbox.org/" target="_blank">Virtual Box</a>
+- <a href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/" target="_blank">Offensive Security Kali Appliances</a>
+- <a href="https://www.kali.org/downloads/" target="_blank">Kali.org ISO Images</a>
+- <a href="https://www.vagrantup.com/" target="_blank">Hashicorp Vagrant</a>
+- <a href="https://app.vagrantup.com/kalilinux/boxes/rolling" target="_blank">Kali Vagrant Box</a>
+- <a href="https://github.com/stevemcilwain/Disposable-Kali" target="_blank">Disposable Kali on Github</a>
 
 Please contribute by forking on Github and issuing pull requests.
 
