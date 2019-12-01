@@ -37,7 +37,7 @@ For example, here is the shell script that installs UFW and sets up an initial A
 curl -s https://raw.githubusercontent.com/stevemcilwain/Disposable-Kali/master/scripts/network_ufw.sh | bash -s 80/tcp
 
 ```
-
+<p> </p>
 ## Easy Configuration
 The new version caters to easy customization with configuration variables in the Vagrantfile.
 

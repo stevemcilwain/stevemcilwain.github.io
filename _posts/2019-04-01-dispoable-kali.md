@@ -55,7 +55,7 @@ I like having a folder shared between my host operating system and the Kali virt
 kali.vm.synced_folder "~/shared", "/root/shared", create: true, owner: "root", group: "root", automount: true
 
 ```
-
+<p> </p>
 ### Firewall Rules
 
 This one is really important.  In this script I install UFW, enable it (which blocks incoming traffic) and then open up some ports I use commonly for downloading tools and catching reverse shells.  Customize this or comment out the script.  
@@ -78,7 +78,7 @@ $script_network_ufw = <<-SCRIPT
 SCRIPT
 
 ```
-
+<p> </p>
 ## First Use
 
 The first time you provision the virtual machine using "vagrant up", the process will take longer than subsequent use because you will be downloading the base box, configuring the VM and running scripts.  
@@ -88,7 +88,7 @@ The first time you provision the virtual machine using "vagrant up", the process
 vagrant up
 
 ```
-
+<p> </p>
 Once complete, do the following:
 
 - Use "vagrant ssh" to login as root
@@ -116,7 +116,7 @@ vagrant destroy
 vagrant up
 
 ```
-
+<p> </p>
 ## Headless Usage
 
 My favorite aspect of this, especially with Ubuntu as my host operating system is that I can use the VM completely headless without having to start the VirtualBox GUI and get a full desktop to just use a bunch of terminal windows.  I can also start X applications forwarded over the SSH connection such as Firefox and Burp Suite.
