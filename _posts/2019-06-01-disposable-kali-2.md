@@ -14,8 +14,6 @@ tags: hacking kali linux vagrant virtualbox oscp pentest
 ## Version 0.2.0 Released
 This new version is a complete refactor adding easier and more versatile customization.
 
-## Disposable Kali on Github
-
 ## Features
 - changing "vagrant ssh" to use root
 - adding swap space
@@ -34,7 +32,11 @@ All shell scripts have been moved from inline to external files. This means you 
 
 For example, here is the shell script that installs UFW and sets up an initial ALLOW list as the first argument:
 
+```bash
+
 curl -s https://raw.githubusercontent.com/stevemcilwain/Disposable-Kali/master/scripts/network_ufw.sh | bash -s 80/tcp
+
+```
 
 ## Easy Configuration
 The new version caters to easy customization with configuration variables in the Vagrantfile.
@@ -85,3 +87,12 @@ PKGS_UPGRADE = false
 Please report any bugs or problems via Github issues. 
 
 ```
+
+## Resources
+
+- <a href="https://github.com/stevemcilwain/Disposable-Kali" target="_blank">Disposable Kali on Github</a>
+
+Please contribute by forking on Github and issuing pull requests.
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
