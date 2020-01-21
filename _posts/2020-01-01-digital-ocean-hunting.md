@@ -17,12 +17,12 @@ tags: hacking ubuntu linux digital-ocean bug-bounty
 # Using Digital Ocean for Bounty Hunting
 
 These instructions are how I setup a base Ubuntu 18.04 droplet on Digital Ocean for Bug Bounty Hunting.  The steps below walk you through how to configure Ubuntu for secure remote access, update packages and install some common core packages needed for bug hunting tools.  Once complete, we'll create a snapshot to use for building additional droplets, faster as you try different toolsets out.
-
+<p> </p>
 ## Digital Ocean
 
 Before starting, sign up for Digital Ocean, you can use my referal link below to get a $100 credit for 6 months. 
 
-https://m.do.co/c/354c7849dfe2
+<a href="https://m.do.co/c/354c7849dfe2" target="_blank">Digital Ocean - Sign-Up with $100 Credit</a>
 
 A droplet is DO's terminology for a virtual machine (VM).   They have pre-built base images (or you can upload your own).  You are billed for the droplet on or off - by the hour.  After creating and using the droplet, you can then destory it and no longer be billed.  
 
@@ -30,22 +30,19 @@ These instructions will give you a repeatable method for building a core snapsho
 
 Other ways exist to completely automate the setup of droplets using platforms like Vagrant or Ansible.
 
-
-
+<p> </p>
 ## 1.0 Create a Droplet
 
 I'm using their Ubuntu 18.04 base image to create a droplet. Typically I'll use the Standard Plan with a $20/month droplet configuration (2 vcpu's and 4 GB ram).  Select the level of resources you need. 
 
 Create a droplet named "Hunter01", wait for it to provision.  Once you receive an email with the IP address, root username and password then proceed.
 
-
-
+<p> </p>
 ## 2.0 Operational Security
 
 First we need to secure our own system before attacking others, this is called operational security (OPSEC) and it is your responsibility as a bug bounty hunter or pentester to ensure you have good OPSEC to protect the data and access you have for targets.
 
-
-
+<p> </p>
 ### 2.1 Configure Hostname
 
 Make note of the assigned IP address for the droplet, we'll use this to create a local hostname.
@@ -69,8 +66,7 @@ You can manually edit the hosts file to clean it up, but you must be using an el
 notepad C:\windows\System32\drivers\etc\hosts
 ```
 
-
-
+<p> </p>
 ### 2.2 Add New User
 
 Connect to the droplet using the root user and password emailed from DO.
@@ -94,8 +90,7 @@ Disconnect and reconnect as the new user.
 ssh hunter@hunter01
 ```
 
-
-
+<p> </p>
 ### 2.3 Setup SSH Keys
 
 Assuming you already have a local SSH keypair, we'll add your public SSH key to the new droplet.
@@ -117,8 +112,7 @@ chmod -R go= ~/.ssh
 
 Now exit your SSH session and reconnect.  You should be prompted for your SSH key password instead this time (if set).
 
-
-
+<p> </p>
 ### 2.4 Secure SSH
 
 While connected as your new user, change SSHD config to block login attempts for root and for passwords.
@@ -140,8 +134,7 @@ Save with CTRL-S, CTRL-X and restart SSH:
 sudo systemctl restart ssh
 ```
 
-
-
+<p> </p>
 ### 2.5 Firewall
 
 Enable the UFW firewall to only allow incoming SSH connections.
@@ -152,8 +145,7 @@ Enable the UFW firewall to only allow incoming SSH connections.
  sudo ufw status numbered
 ```
 
-
-
+<p> </p>
 ## 3.0 Updates
 
 Apply the latest system updates using apt.
@@ -169,8 +161,7 @@ sudo reboot
 
 In most cases having the latest updates will also increase operation security and ensure you have the latest dependencies for other packages you'll be installing. 
 
-
-
+<p> </p>
 ## 4.0 Networking
 
 Change DNS resolvers to the desired settings, in this example I am using Cloudflares public DNS servers 1.1.1.1 and 1.0.0.1as resolvers.
@@ -200,14 +191,12 @@ You can check your current settings with:
 networkctl status
 ```
 
-
-
+<p> </p>
 ## 5.0 Desktop Environment
 
 In some cases, you may want to use local desktop tools such as Burp Suite or Maltego on the droplet, in which case we need to install a desktop environment and allow remote RDP access securely.
 
-
-
+<p> </p>
 ### 5.1 Install XFCE Desktop
 
 The XFCE desktop is lightweight and less resource demanding than desktops like Gnome or KDE.  Install using apt:
@@ -217,8 +206,7 @@ sudo apt-get install xfce4 -y
 sudo apt install xfce4 xfce4-goodies xorg dbus-x11 x11-xserver-utils
 ```
 
-
-
+<p> </p>
 ### 5.2 Install RDP
 
 Install the  XRDP server:
@@ -245,8 +233,7 @@ Now check the status to make sure it is running:
 sudo systemctl status xrdp
 ```
 
-
-
+<p> </p>
 ### 5.3 Connect via RDP
 
 Instead of opening a firewall port for RDP (TCP 3389), tunnel the connection through SSH to keep good operational security.  Exit your SSH session if open and reconnect using tunnelling:
@@ -263,8 +250,7 @@ Once the SSH session is connected, start the RDP client and enter your local add
 127.0.0.1:33389
 ```
 
-
-
+<p> </p>
 ## 6.0 Core Packages
 
 Install some essential packages.  We'll need the python and "go" programming languages because many of the tools we'll use are built with these.
@@ -293,8 +279,7 @@ Now reload your profile after saving the changes:
 source ~/.profile
 ```
 
-
-
+<p> </p>
 ## 6.0 ZSH
 
 Add ZSH for a better shell and to support plugins. 
@@ -328,8 +313,7 @@ source ~/.zshrc
 
 * If your prompt is missing fonts, it's probably because your Windows terminal application doesn't have the powerline fonts installed.  Clone the powerline git repo and run install.ps1.
 
-  
-
+<p> </p>
 ## 7.0 Snapshot
 
 Now you've got the basics all setup, shutdown the droplet:
@@ -339,6 +323,7 @@ sudo poweroff
 ```
 
 Then go to your DO control panel and take a snapshot.  From this point forward you can install different toolsets for bug bounty hunting, such as the PTF framework or other custom setup scripts and always roll back to this snapshot if something goes awry.
-
+<p> </p>
+<p> </p>
 
 
