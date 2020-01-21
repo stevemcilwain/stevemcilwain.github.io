@@ -20,11 +20,11 @@ These instructions are how I setup a base Ubuntu 18.04 droplet on Digital Ocean 
 <p> </p>
 ## Digital Ocean
 
-Before starting, sign up for Digital Ocean, you can use my referal link below to get a $100 credit for 6 months. 
+Before starting, sign up for Digital Ocean, you can use my referral link below to get a $100 credit for 6 months. 
 
 <a href="https://m.do.co/c/354c7849dfe2" target="_blank">Digital Ocean - Sign-Up with $100 Credit</a>
 
-A droplet is DO's terminology for a virtual machine (VM).   They have pre-built base images (or you can upload your own).  You are billed for the droplet on or off - by the hour.  After creating and using the droplet, you can then destory it and no longer be billed.  
+A droplet is DO's terminology for a virtual machine (VM).   They have pre-built base images (or you can upload your own).  You are billed for the droplet on or off - by the hour.  After creating and using the droplet, you can then destroy it and no longer be billed.  
 
 These instructions will give you a repeatable method for building a core snapshot that can then be used to quickly setup, use and destroy future droplets... and minimize your bill.
 
