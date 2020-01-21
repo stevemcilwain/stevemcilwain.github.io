@@ -70,7 +70,7 @@ Connect to the droplet using the root user and password emailed from DO.
 ```powershell
 ssh root@hunter01
 ```
-
+<p> </p>
 Once logged in, follow the prompts to set a new password for the root account.
 
 Next add a new user account called "hunter" and add it to the sudo users group.
@@ -79,7 +79,7 @@ Next add a new user account called "hunter" and add it to the sudo users group.
 adduser hunter
 usermod -aG sudo hunter
 ```
-
+<p> </p>
 Disconnect and reconnect as the new user.
 
 ```powershell
@@ -97,7 +97,7 @@ Generate keys in the droplet using ssh-keygen, then add an authorized_keys file.
 ssh-keygen
 nano ~/.ssh/authorized_keys
 ```
-
+<p> </p>
 Paste your public key from your local system, for example ```C:\Users\<username>\.ssh\id_rsa.pub``` , into the editor and save (CTRL-S, CTRL-X).
 
 Set the permissions on the new file.
@@ -105,7 +105,7 @@ Set the permissions on the new file.
 ```bash
 chmod -R go= ~/.ssh
 ```
-
+<p> </p>
 Now exit your SSH session and reconnect.  You should be prompted for your SSH key password instead this time (if set).
 
 <p> </p>
@@ -116,14 +116,14 @@ While connected as your new user, change SSHD config to block login attempts for
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
-
+<p> </p>
 Make the following edits, find these entries and change both to "no":
 
 ```bash
 PermitRootLogin no
 PasswordAuthentication no
 ```
-
+<p> </p>
 Save with CTRL-S, CTRL-X and restart SSH:
 
 ```bash
@@ -154,7 +154,7 @@ sudo apt autoremove -y
 sudo reboot
 
 ```
-
+<p> </p>
 In most cases having the latest updates will also increase operation security and ensure you have the latest dependencies for other packages you'll be installing. 
 
 <p> </p>
@@ -165,7 +165,7 @@ Change DNS resolvers to the desired settings, in this example I am using Cloudfl
 ```bash
 sudo nano /etc/netplan/50-cloud-init.yaml
 ```
-
+<p> </p>
 This file has a yaml syntax.  Locate the lines under "nameservers" and replace with your preferred resolvers.  
 
 ```
@@ -174,13 +174,13 @@ nameservers:
     - 1.1.1.1
     - 1.0.0.1
 ```
-
+<p> </p>
 Save the file then apply the changes with:
 
 ```bash
 sudo netplan apply
 ```
-
+<p> </p>
 You can check your current settings with:
 
 ```bash
@@ -210,19 +210,19 @@ Install the  XRDP server:
 ```bash
 sudo apt install xrdp -y
 ```
-
+<p> </p>
 Edit the config to start the XFCE desktop on connect:
 
 ```bash
 echo "exec startxfce4" >> /etc/xrdp/xrdp.ini
 ```
-
+<p> </p>
 Restart
 
 ```bash
  sudo systemctl restart xrdp
 ```
-
+<p> </p>
 Now check the status to make sure it is running:
 
 ```bash
@@ -237,7 +237,7 @@ Instead of opening a firewall port for RDP (TCP 3389), tunnel the connection thr
 ```bash
  ssh -L 127.0.0.1:33389:hunter01:3389 hunter@hunter01
 ```
-
+<p> </p>
 This command will setup local port 33389 to forward RDP traffic to the droplet on port 3389 once you connect via SSH.  The traffic will be encapsulated inside of the encrypted SSH tunnel and your RDP service cannot be directly attacked.
 
 Once the SSH session is connected, start the RDP client and enter your local address to connect:
@@ -257,7 +257,7 @@ Install some essential packages.  We'll need the python and "go" programming lan
 sudo apt-get install golang -y
 sudo apt-get install python python-pip -y
 ```
-
+<p> </p>
 **Configure Golang**
 
 Edit your .profile to add exports for go with ```nano ~./profile ```
@@ -268,7 +268,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export GO111MODULE=on
 ```
-
+<p> </p>
 Now reload your profile after saving the changes:
 
 ```bash
@@ -284,13 +284,13 @@ Add ZSH for a better shell and to support plugins.
 sudo apt-get install fonts-powerline -y
 sudo apt-get install zsh -y
 ```
-
+<p> </p>
 Add the "oh-my-zsh" framework
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-
+<p> </p>
 Once completed, edit the .zshrc file with ```nano ~/.zshrc``` and change the following values, then save.
 
 ```bash
@@ -300,13 +300,13 @@ plugins=(git extract)
 
 #Add aliases at the end of the file
 ```
-
+<p> </p>
 Reload:
 
 ```bash
 source ~/.zshrc
 ```
-
+<p> </p>
 * If your prompt is missing fonts, it's probably because your Windows terminal application doesn't have the powerline fonts installed.  Clone the powerline git repo and run install.ps1.
 
 <p> </p>
@@ -317,7 +317,7 @@ Now you've got the basics all setup, shutdown the droplet:
 ```bash
 sudo poweroff
 ```
-
+<p> </p>
 Then go to your DO control panel and take a snapshot.  From this point forward you can install different toolsets for bug bounty hunting, such as the PTF framework or other custom setup scripts and always roll back to this snapshot if something goes awry.
 <p> </p>
 <p> </p>
