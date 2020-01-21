@@ -48,20 +48,17 @@ First we need to secure our own system before attacking others, this is called o
 Make note of the assigned IP address for the droplet, we'll use this to create a local hostname.
 
 From an elevated powershell prompt, run the following using the assigned IP address:
-
 ```powershell
-echo "[IP_ADDRESS] hunter01" >> C:\windows\system32\drivers\etc\hosts
+echo "<IP_ADDRESS> hunter01" >> C:\windows\system32\drivers\etc\hosts
 ```
-
+<p> </p>
 Check your changes:
-
 ```powershell
 cat C:\windows\System32\drivers\etc\hosts
 ping hunter01
 ```
-
+<p> </p>
 You can manually edit the hosts file to clean it up, but you must be using an elevated prompt to do so.
-
 ```powershell
 notepad C:\windows\System32\drivers\etc\hosts
 ```
@@ -70,7 +67,6 @@ notepad C:\windows\System32\drivers\etc\hosts
 ### 2.2 Add New User
 
 Connect to the droplet using the root user and password emailed from DO.
-
 ```powershell
 ssh root@hunter01
 ```
